@@ -1,0 +1,30 @@
+<div class="p-6 flex flex-col gap-6">
+  <div class="flex flex-col gap-2">
+    <h1 class="text-2xl font-semibold">Create New User</h1>
+    <p class="cursor-pointer text-blue-500" [routerLink]="'/'">
+      &lt; Back to List
+    </p>
+  </div>
+
+  <div class="flex flex-col gap-3 w-full" [formGroup]="userForm">
+    <um-input label="User Name" formControlName="userName"></um-input>
+    <um-input label="First Name" formControlName="firstName"></um-input>
+    <um-input label="Last Name" formControlName="lastName"></um-input>
+    <um-switch label="Is Admin" formControlName="isAdmin"></um-switch>
+    <um-select
+      label="Department"
+      [list]="departmentList"
+      formControlName="department"
+    ></um-select>
+
+    <!-- Error message -->
+    <div *ngIf="userForm.touched && userForm.invalid">
+      <p class="text-red-500">
+        Invalid value: Please ensure all fields are required
+      </p>
+    </div>
+    <um-button type="neutral" class="mt-3" (OnClick)="addUser()"
+      >Create User</um-button
+    >
+  </div>
+</div>

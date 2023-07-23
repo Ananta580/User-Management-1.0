@@ -1,7 +1,7 @@
 <div class="p-6 flex flex-col gap-6">
   <div class="flex justify-between items-center">
     <h1 class="text-2xl font-semibold">Users</h1>
-    <um-button type="secondary">Add New User</um-button>
+    <um-button type="neutral" [routerLink]="'/add'">Add New User</um-button>
   </div>
 
   <div class="overflow-x-auto">
@@ -25,7 +25,12 @@
           <td>{{ user.firstName }}</td>
           <td>{{ user.lastName }}</td>
           <td>{{ user.department }}</td>
-          <td class="text-sm text-blue-500">view</td>
+          <td
+            class="text-sm text-blue-500"
+            [routerLink]="'/details/' + user.id"
+          >
+            view
+          </td>
         </tr>
       </tbody>
     </table>

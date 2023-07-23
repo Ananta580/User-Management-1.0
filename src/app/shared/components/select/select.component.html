@@ -1,0 +1,12 @@
+<fieldset class="form-control w-full max-w-2xl">
+  <label class="label" *ngIf="label">
+    <span class="label-text">{{ label }}</span>
+  </label>
+  <select
+    (ngModelChange)="handleChange($event)"
+    class="select select-bordered w-full max-w-x"
+    [ngModel]="value"
+  >
+    <option *ngFor="let item of list">{{ item }}</option>
+  </select>
+</fieldset>

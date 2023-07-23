@@ -9,11 +9,12 @@ const routes: Routes = [
         (c) => c.UserListComponent
       ),
   },
+
   {
-    path: 'add',
+    path: 'details/:userId',
     loadComponent: () =>
-      import('./pages/user-add/user-add.component').then(
-        (c) => c.UserAddComponent
+      import('./pages/user-detail/user-detail.component').then(
+        (c) => c.UserDetailComponent
       ),
   },
 ];

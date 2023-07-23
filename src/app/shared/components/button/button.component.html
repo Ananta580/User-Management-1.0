@@ -1,6 +1,6 @@
 <button
   class="btn"
-  [ngClass]="[type ? 'btn-' + type : '', size ? 'btn-' + size : '']"
+  [class]="[type ? 'btn-' + type : '', size ? 'btn-' + size : '']"
   (click)="OnClick.emit($event)"
   (focus)="OnFocus.emit($event)"
   (blur)="OnBlur.emit($event)"
