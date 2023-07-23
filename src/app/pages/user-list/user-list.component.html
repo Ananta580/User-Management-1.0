@@ -17,11 +17,11 @@
       </thead>
       <tbody>
         <tr
-          *ngFor="let user of mockUsers; let i = index"
+          *ngFor="let user of userList$ | async; let i = index"
           class="cursor-pointer"
-          [ngClass]="user.isAdmin ? 'bg-yellow-100' : 'hover'"
+          [ngClass]="user.isAdmin ? 'bg-yellow-100' : ''"
         >
-          <td>{{ i + 1 }}</td>
+          <td>{{ user.id + 1 }}</td>
           <td>{{ user.firstName }}</td>
           <td>{{ user.lastName }}</td>
           <td>{{ user.department }}</td>

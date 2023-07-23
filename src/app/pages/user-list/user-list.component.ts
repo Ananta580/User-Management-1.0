@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 import { UserModel } from 'src/app/shared/models/user.model';
+import { UserStore } from 'src/app/store/user.store';
 
 @Component({
   selector: 'um-user-list',
@@ -9,22 +11,9 @@ import { UserModel } from 'src/app/shared/models/user.model';
   templateUrl: './user-list.component.html',
 })
 export class UserListComponent {
-  mockUsers: UserModel[] = [
-    {
-      id: 1,
-      firstName: 'Lara',
-      lastName: 'Dutta',
-      isAdmin: false,
-      userName: 'lara550',
-      department: 'Management',
-    },
-    {
-      id: 2,
-      firstName: 'Alan',
-      lastName: 'Hinder',
-      isAdmin: true,
-      userName: 'alan550',
-      department: 'Maintenance',
-    },
-  ];
+  userList$: Observable<UserModel[]> = new Observable();
+
+  constructor(private userStore: UserStore) {
+    this.userList$ = this.userStore.selectUserList$;
+  }
 }

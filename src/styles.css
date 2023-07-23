@@ -5,5 +5,10 @@
 
 body{
     background: #fbfafa;
+    color: rgb(34, 30, 30);
     height: 100vh;
+}
+
+table tr{
+    border-bottom: 0px;;
 }
