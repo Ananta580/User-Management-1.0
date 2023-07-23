@@ -5,6 +5,7 @@ import { ButtonComponent } from './components/button/button.component';
 import { InputComponent } from './components/input/input.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SwitchComponent } from './components/switch/switch.component';
+import { SelectComponent } from './components/select/select.component';
 
 @NgModule({
   declarations: [
@@ -12,9 +13,16 @@ import { SwitchComponent } from './components/switch/switch.component';
     ButtonComponent,
     InputComponent,
     SwitchComponent,
+    SelectComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, FormsModule],
   providers: [],
-  exports: [NavBarComponent, ButtonComponent, InputComponent, SwitchComponent],
+  exports: [
+    NavBarComponent,
+    ButtonComponent,
+    InputComponent,
+    SwitchComponent,
+    SelectComponent,
+  ],
 })
 export class SharedModule {}
