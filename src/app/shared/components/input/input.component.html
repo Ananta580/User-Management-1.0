@@ -1,1 +1,17 @@
-<p>input works!</p>
+<fieldset class="form-control w-full max-w-2xl">
+  <label class="label" *ngIf="label">
+    <span class="label-text">{{ label }}</span>
+  </label>
+
+  <input
+    class="input input-bordered w-full max-w-x"
+    [type]="type"
+    [ngModel]="value"
+    (ngModelChange)="handleChange($event)"
+    [placeholder]="placeholder"
+    [disabled]="disabled"
+    (blur)="handleTouch()"
+  />
+
+  <ng-content> </ng-content>
+</fieldset>

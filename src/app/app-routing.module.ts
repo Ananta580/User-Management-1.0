@@ -9,6 +9,13 @@ const routes: Routes = [
         (c) => c.UserListComponent
       ),
   },
+  {
+    path: 'add',
+    loadComponent: () =>
+      import('./pages/user-add/user-add.component').then(
+        (c) => c.UserAddComponent
+      ),
+  },
 ];
 
 @NgModule({
