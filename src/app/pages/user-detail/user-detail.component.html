@@ -1,0 +1,28 @@
+<div class="p-6 flex flex-col gap-6" *ngIf="user$ | async; let user">
+  <div class="flex flex-col gap-2">
+    <h1 class="text-2xl font-semibold">
+      User Detail: <span class="font-bold">{{ user.userName }}</span>
+    </h1>
+    <p class="cursor-pointer text-blue-500" [routerLink]="'/'">
+      &lt; Back to List
+    </p>
+  </div>
+
+  <img
+    class="rounded-full mt-10"
+    height="100"
+    width="100"
+    src="https://picsum.photos/100/100"
+  />
+  <div
+    class="grid grid-cols-3 gap-6 mt-4 p-4 rounded-md"
+    [class]="user.isAdmin ? 'bg-yellow-100' : 'bg-slate-200'"
+  >
+    <pre>User ID    : <span class="font-semibold text-slate-600">{{user.id}}</span></pre>
+    <pre>User Name  : <span class="font-semibold text-slate-600">{{user.userName}}</span></pre>
+    <pre>First Name : <span class="font-semibold text-slate-600">{{user.firstName}}</span></pre>
+    <pre>Last Name  : <span class="font-semibold text-slate-600">{{user.lastName}}</span></pre>
+    <pre>Department : <span class="font-semibold text-slate-600">{{user.department}}</span></pre>
+    <pre>Is Admin   : <span class="font-semibold text-slate-600">{{user.isAdmin}}</span></pre>
+  </div>
+</div>
