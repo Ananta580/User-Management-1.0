@@ -2,12 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserModel } from 'src/app/shared/models/user.model';
+import { SharedModule } from 'src/app/shared/shared.module';
 import { UserStore } from 'src/app/store/user.store';
 
 @Component({
   selector: 'um-user-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SharedModule],
   templateUrl: './user-list.component.html',
 })
 export class UserListComponent {

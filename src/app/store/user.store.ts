@@ -7,7 +7,9 @@ interface UserState {
   userList: UserModel[];
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class UserStore extends ComponentStore<UserState> {
   // Observable to select all users
   readonly selectUserList$ = this.select((state) => state.userList);
