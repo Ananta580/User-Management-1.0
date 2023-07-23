@@ -1,0 +1,9 @@
+<button
+  class="btn"
+  [ngClass]="[type ? 'btn-' + type : '', size ? 'btn-' + size : '']"
+  (click)="OnClick.emit($event)"
+  (focus)="OnFocus.emit($event)"
+  (blur)="OnBlur.emit($event)"
+>
+  <ng-content></ng-content>
+</button>

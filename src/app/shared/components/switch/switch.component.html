@@ -1,0 +1,11 @@
+<div class="form-control">
+  <label class="label cursor-pointer justify-start gap-3">
+    <input
+      type="checkbox"
+      class="toggle"
+      [checked]="isChecked"
+      (change)="switcherChecked()"
+    />
+    <span class="label-text">{{ label }}</span>
+  </label>
+</div>
