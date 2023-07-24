@@ -4,7 +4,7 @@
       Profile of:
       <span class="font-bold">{{ user.firstName }} {{ user.lastName }}</span>
     </h1>
-    <p class="cursor-pointer text-blue-500" [routerLink]="'/'">
+    <p id="back-btn" class="cursor-pointer text-blue-500" [routerLink]="'/'">
       &lt; Back to List
     </p>
   </div>
@@ -20,11 +20,11 @@
     class="grid grid-cols-3 gap-6 mt-4 p-4 rounded-md"
     [class]="user.isAdmin ? 'bg-yellow-100' : 'bg-slate-200'"
   >
-    <pre>User ID    : <span class="font-semibold text-slate-600">{{user.id}}</span></pre>
-    <pre>User Name  : <span class="font-semibold text-slate-600">{{user.userName}}</span></pre>
-    <pre>First Name : <span class="font-semibold text-slate-600">{{user.firstName}}</span></pre>
-    <pre>Last Name  : <span class="font-semibold text-slate-600">{{user.lastName}}</span></pre>
-    <pre>Department : <span class="font-semibold text-slate-600">{{user.department}}</span></pre>
-    <pre>Is Admin   : <span class="font-semibold text-slate-600">{{user.isAdmin}}</span></pre>
+    <pre>User ID    : <span id="userid" class="font-semibold text-slate-600">{{user.id}}</span></pre>
+    <pre>User Name  : <span id="username"  class="font-semibold text-slate-600">{{user.userName}}</span></pre>
+    <pre>First Name : <span id="firstname" class="font-semibold text-slate-600">{{user.firstName}}</span></pre>
+    <pre>Last Name  : <span id="lastname" class="font-semibold text-slate-600">{{user.lastName}}</span></pre>
+    <pre>Department : <span id="department" class="font-semibold text-slate-600">{{user.department}}</span></pre>
+    <pre>Is Admin   : <span id="isadmin" class="font-semibold text-slate-600">{{user.isAdmin}}</span></pre>
   </div>
 </div>
