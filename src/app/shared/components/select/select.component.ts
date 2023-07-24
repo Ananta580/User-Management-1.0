@@ -23,7 +23,7 @@ export class SelectComponent {
 
   @Input() label = '';
 
-  @Input() list: any[] = [];
+  @Input() list: string[] = [];
 
   @Output() handleOnChange: EventEmitter<string> = new EventEmitter();
 

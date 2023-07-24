@@ -21,7 +21,7 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 export class SwitchComponent {
   selected = false;
 
-  protected isChecked?: boolean;
+  isChecked?: boolean;
 
   @Input() dataId?: string;
 
