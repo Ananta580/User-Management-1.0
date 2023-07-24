@@ -8,7 +8,6 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
-import { Observable } from 'rxjs';
 import { UserModel } from './../../shared/models/user.model';
 import { SharedModule } from './../../shared/shared.module';
 import { UserStore } from './../../store/user.store';
