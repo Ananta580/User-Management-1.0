@@ -18,7 +18,7 @@
       <tbody>
         <tr
           *ngFor="let user of userList$ | async; let i = index"
-          class="cursor-pointer"
+          class="cursor-pointer user-list-item"
           [ngClass]="user.isAdmin ? 'bg-yellow-100' : ''"
         >
           <td>{{ user.id + 1 }}</td>

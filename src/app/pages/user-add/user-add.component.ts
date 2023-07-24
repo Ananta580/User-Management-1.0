@@ -9,9 +9,9 @@ import {
 } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { Observable } from 'rxjs';
-import { UserModel } from 'src/app/shared/models/user.model';
-import { SharedModule } from 'src/app/shared/shared.module';
-import { UserStore } from 'src/app/store/user.store';
+import { UserModel } from './../../shared/models/user.model';
+import { SharedModule } from './../../shared/shared.module';
+import { UserStore } from './../../store/user.store';
 
 @Component({
   selector: 'um-user-add',
@@ -27,7 +27,6 @@ import { UserStore } from 'src/app/store/user.store';
 })
 export class UserAddComponent {
   userForm!: FormGroup;
-  userList$: Observable<UserModel[]> = new Observable();
 
   departmentList = ['Marketing', 'Management', 'Maintenance'];
 
@@ -36,8 +35,6 @@ export class UserAddComponent {
     private fb: FormBuilder,
     private router: Router
   ) {
-    this.userList$ = this.userStore.selectUserList$;
-
     this.userForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -54,8 +51,7 @@ export class UserAddComponent {
       return;
     }
     this.userForm.markAsUntouched();
-    const { value } = this.userForm;
-    const user: UserModel = value;
+    const user: UserModel = this.userForm.value;
     this.userStore.addUser(user);
     this.router.navigateByUrl('/');
   }
